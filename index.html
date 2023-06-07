@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title> Brainhack Nordic 2022 </title>
+  <title> FDM.NRW Werkstatt </title>
   <meta name="description" content=" incf-2022-lightning-jsheunis ">
   <meta name="author" content=" Stephan Heunis ">
 
@@ -23,23 +23,23 @@
 
 <!-- FRONT PAGE -->
 <section>
-    <h2 style="margin-bottom: 0;">BrainHack Nordic 2022</h2>
+    <h2 style="margin-bottom: 0;">FDM.NRW Werkstatt 2023</h2>
     <img src="pics/datalad_git.svg" style="height:300px; margin-bottom: 0;" alt="title image">
     <div style="margin-top:0.5em;">
         <table style="border: none;">
             <tr>
-                <td>Stephan Heunis
+                <td>Michael Hanke, Adina Wagner,<br>Stephan Heunis
                 <br>
                 <small>
                     <a href="https://twitter.com/fMRwhy" target="_blank">
                     <img data-src="pics/twitter.png" style="height:30px;margin:0px" />
-                    @fMRwhy
+                    @datalad
                     </a>
                 </small>
                 <small>
-                    <a href="https://github.com/jsheunis" target="_blank">
+                    <a href="https://github.com/datalad" target="_blank">
                     <img data-src="pics/GitHub.png" style="height:30px;margin:0px" />
-                    jsheunis
+                    datalad
                     </a>
                 </small>
                 </td>
@@ -56,7 +56,7 @@
     </p>
     <br>
     <div>
-        <small>Slides:&nbsp;</small><a href="https://jsheunis.github.io/brainhack-nordic-datalad"><small>jsheunis.github.io/brainhack-nordic-datalad</small></a>
+        <small>Slides:&nbsp;</small><a href="https://psychoinformatics-de.github.io/fdm-datalad"><small>psychoinformatics-de.github.io/fdm-datalad</small></a>
     </div>
 </section>
 
@@ -72,167 +72,133 @@
             </tr>
         </table>
     </div>
-    <ul>
-        <li>The People with Money</li>
-        <li>The Psychoinformatics + DataLad teams</li>
-        <li>All contributors to the open-source DataLad ecosystem</li>
-        <li>Cyril and Melanie, and the host institution</li>
-    </ul>
 </section>
 
 
 <section>
     <h2>Agenda</h2>
     <ol>
-        <li>Context</li>
-        <li>Practical aspects</li>
-        <li>Get cracking!</li>
+        <li>...</li>
+        <li>...</li>
     </ol>
 </section>
 
-
 <section>
-    <h2>1. The Context</h2>
-    <div style="margin-top:0.5em;">
-        <table style="border: none;" table-layout: fixed;>
-            <tr>
-                <td width="50%"><img style="height:500px; margin-top: 0; margin-right:1px;vertical-align:middle;" data-src="pics/comic_box1.svg" /></td>
-                <td>
-                    <ul style="vertical-align:middle;">
-                        <li class="fragment fade-in-then-semi-out">Alice is a PhD student in a research team.</li>
-                        <li class="fragment fade-in-then-semi-out">She works on a fairly typical research project: data collection & processing.</li>
-                        <li class="fragment fade-in-then-semi-out">First sample → final result = cumulative process</li>
-                    </ul>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <h3 class="fragment fade-in-then-semi-out">How does Alice go about her daily job?*</h3>
-</section>
-
-
-<section>
-    <h2>1. The Context</h2>
-    <ul>
-        <li class="fragment fade-in-then-semi-out">When working locally, Alice likes to have an automated record of:
-            <ul>
-                <li>when a given file was last changed</li>
-                <li>where it came from</li>
-                <li>what input files were used to generate a given output</li>
-                <li>why some things were done.</li>
-            </ul>
-        </li>
-        <li class="fragment fade-in-then-semi-out">Even if she doesn't share her work, this is essential for her future self</li>
-        <li class="fragment fade-in-then-semi-out">Project is exploratory: often large changes to her analysis scripts</li>
-        <li class="fragment fade-in-then-semi-out">She enjoys the comfort of being able to return to a previously recorded state</li>
-    </ul>
-    <br><br>
-    <h3 class="fragment fade-in-then-semi-out">This is: *local version control*</h3>
-</section>
-
-
-<section>
-    <h2>1. The Context</h2>
-    <ul>
-        <li class="fragment fade-in-then-semi-out" data-fragment-index="1">Alice's work is not confined to a single computer:
-            <ul>
-                <li>laptop / desktop / remote server</li>
-                <li>there should be an automatic+efficient way to synchronize</li>
-            </ul>
-        </li>
-        <li class="fragment fade-in-then-semi-out" data-fragment-index="2">Parts of the data are collected or analysed by colleagues from another team. This requires:
-            <ul>
-                <li>distributed synchronization with centralized storage</li>
-                <li>preservation of origin & authorship of changes</li>
-                <li>effective combination of simultaneous contributions</li>
-            </ul>
-        </li>
-    </ul>
-    <br><br>
-    <h3 class="fragment fade-in-then-semi-out" data-fragment-index="3">This is: *distributed version control*</h3>
-</section>
-
-
-<section>
-    <h2>1. The Context</h2>
-    <ul>
-        <li class="fragment fade-in-then-semi-out">Alice applies local version control for her own work</li>
-        <li class="fragment fade-in-then-semi-out">She also applies distributed version control when working with colleagues and collaborators</li>
-
-        <li class="fragment fade-in-then-semi-out">She often needs to work on a subset of data at any given time:
-            <ul>
-                <li>all files are kept on a server</li>
-                <li>a few files are rotated into and out of her laptop</li>
-            </ul>
-        </li>
-        <li class="fragment fade-in-then-semi-out">Alice needs to publish the data at project's end:
-            <ul>
-                <li>raw data / outputs / both</li>
-                <li>completely or selectively</li>
-            </ul>
-        </li>
-    </ul>
-    <br><br>
-    <h3 class="fragment fade-in-then-semi-out">This is: *data management (with DataLad 😀)*</h3>
-</section>
-
-
-<section>
-    <h2>1. The Context</h2>
-    <img src="pics/comic_box3.svg" alt="">
-</section>
-
-
-<section>
-    <h2>2. Practical aspects</h2>
-    <br>
-
-    <ul>
-        <li class="fragment">Information:<br>
-            &nbsp;&nbsp;&nbsp;- <a href="https://github.com/jsheunis/brainhack-nordic-datalad">github.com/jsheunis/brainhack-nordic-datalad</a>
-        </li>
-        <li class="fragment">Slides:<br>
-            &nbsp;&nbsp;&nbsp;- <a href="https://jsheunis.github.io/brainhack-nordic-datalad">jsheunis.github.io/brainhack-nordic-datalad</a>
-        </li>
-        <li class="fragment">Cloud-computing environment:<br>
-            &nbsp;&nbsp;&nbsp;- <a href="https://datalad-hub.inm7.de">datalad-hub.inm7.de</a>
-        </li>
-        <li class="fragment">Format:
-            <ul>
-                <li>Hands-on</li>
-                <li>Work on your own machine in the browser</li>
-                <li>Step-by-step code execution</li>
-                <li>Ask questions any time!</li>
-            </ul>
-        </li>
-        <li class="fragment">Timing:
-            <ul>
-                <li>2 hrs (including intro)</li>
-                <li>Short break at 1hr</li>
-            </ul>
-        </li>
-    </ul>
-</section>
-
-
-<section>
-    <h2>2. Practical aspects</h2>
+    <h2>Practical aspects</h2>
     <img width="200" src="pics/jupyter_logo.png" alt="jupyterlogo"><br>
     <ul>
         <li>We'll work in the browser on a cloud server with JupyterHub</li>
+        <li class="fragment">Cloud-computing environment:<br>
+            &nbsp;&nbsp;&nbsp;- <a href="https://datalad-hub.inm7.de">datalad-hub.inm7.de</a>
+        </li>
         <li class="fragment">We have pre-installed DataLad and other requirements</li>
         <li class="fragment">We will work via the terminal</li>
-        <li class="fragment">Log in using the email address with which you registered for the brainhack</li>
-        <li class="fragment">Select a password when logging in for the first time; remember it!</li>
+        <li class="fragment">Select a username and password when logging in for the first time; remember it!</li>
     </ul>
 </section>
 
 
-<section>
-    <h2>3. So let's do this!</h2>
-    <br><br>
-    <iframe src="https://giphy.com/embed/bpSJSlawHPChr9oOq4" width="720" height="405" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<section style="text-align: left;">
+    <h3>Midterm YODA Data Analysis Project</h3>
+    <ul style="font-size: xx-large">
+        <li>DataLad dataset: <a href="https://github.com/datalad-handbook/midterm_project">https://github.com/datalad-handbook/midterm_project</a></li>
+        <li>All inputs (i.e. building blocks from other sources) are located in <code>input/</code></li>
+        <li>All custom code is located in <code>code/</code></li>
+        <li>All results (i.e., generated files) are located in the root of the dataset:</li>
+        <ul>
+            <li><code>prediction_report.csv</code> contains the main classification metrics</li>
+            <li><code>output/pairwise_relationships.png</code> is a plot of the relations between features.</li>
+        </ul>
+    </ul>
+    <pre style="margin-left: 0; margin-top: 2em;">
+        <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+            [DS~0] ~/midterm_project
+            ├── CHANGELOG.md
+            ├── README.md
+            ├── code/
+            │   ├── README.md
+            │   └── script.py
+            ├── [DS~1] input/
+            │   └── iris.csv -> .git/annex/objects/...
+            ├── pairwise_relationships.png -> .git/annex/objects/...
+            └── prediction_report.csv -> .git/annex/objects/...
+        </code>
+    </pre>
 </section>
+
+
+<section>
+    <h1><code>Publishing Data</code></h1>
+</section>
+
+
+<section>
+    <h2><code>create-sibling-gitlab</code></h2>
+    <img src="pics/gitlab-logo-100.svg" alt="gitlab-logo">
+</section>
+
+<section>
+    <h2>create-sibling-gitlab</h2>
+    <pre style="margin-left: 0;">
+        <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+            create-sibling-gitlab
+        </code>
+    </pre>
+</section>
+
+<section>
+    <h2><code>create-sibling-osf</code></h2>
+    <img src="pics/git-annex-osf-logo.png" alt="datalad-osf-logo" width="50%">
+</section>
+
+<section>
+    <h2>create-sibling-osf</h2>
+    <pre style="margin-left: 0;">
+        <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+            create-sibling-osf
+        </code>
+    </pre>
+</section>
+
+<section>
+    <h2><code>create-sibling-webdav</code></h2>
+    <img src="pics/Sciebo_Logo.svg" alt="sciebo-logo">
+</section>
+
+<section>
+    <h2>create-sibling-webdav</h2>
+    <pre style="margin-left: 0;">
+        <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+            create-sibling-webdav
+        </code>
+    </pre>
+</section>
+
+<section>
+    <h2><code>create-sibling-dataverse</code></h2>
+    <table>
+        <tr>
+            <td style="width: 50%;"><img src="pics/dataverse_r_project.png" alt=""></td>
+            <td><img src="pics/dataladdataverse.png" alt="dataladdataverse-logo"></td>
+        </tr>
+    </table>
+</section>
+
+<section>
+    <h2>create-sibling-dataverse</h2>
+    <pre style="margin-left: 0;">
+        <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+            create-sibling-dataverse
+        </code>
+    </pre>
+</section>
+
+
+
+<section>
+    <h2>Basic DataLad commands</h2>
+</section>
+
 
 
 <section style="text-align: left;">
@@ -785,11 +751,7 @@
 </section>
 
 
-<section>
-    <h3>The end! For now...</h3>
 
-    <img src="pics/comic_box10.svg" alt="">
-</section>
 <!-- 
 
 <section>
