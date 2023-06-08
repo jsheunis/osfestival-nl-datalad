@@ -149,7 +149,7 @@
             <li>GitLab</li>
             <li>OSF</li>
             <li>Sciebo (webdav)</li>
-            <li>Jülich Data (dataverse)</li>
+            <li>Dataverse</li>
         </ul>
     </ol>
 </section>
@@ -430,23 +430,57 @@
 
 
 
-
+<section>
 <section>
     <h2><code>Publishing to GitLab</code></h2>
+    <p><a href="https://gitlab.com/">https://gitlab.com/</a></p>
     <img src="pics/gitlab-logo-100.svg" alt="gitlab-logo">
 </section>
 
-<section>
+<section style="text-align: left;">
     <h2>create-sibling-gitlab</h2>
-    <pre style="margin-left: 0;">
-        <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
-            create-sibling-gitlab
-        </code>
-    </pre>
+
+    <ol>
+        <li class="fragment">Log into GitLab</li>
+        <li class="fragment">Create personal access token</li>
+        <li class="fragment">Create a top-level group</li>
+        <li class="fragment">Create a gitlab config file (replace relevant items)</li>
+    </ol>
+    <div class="fragment">
+        <pre style="margin-left: 0;">
+            <code data-noescape data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+                cat << EOF > ~/.python-gitlab.cfg
+                ['my-site']
+                url = https://gitlab.com/
+                private_token = 'my-token'
+                api_version = 4
+                EOF
+            </code>
+        </pre>
+    </div>
+    <div class="fragment">
+        Configure <code>create-sibling-gitlab</code> in the midterm_project dataset:
+        <pre style="margin-left: 0;">
+            <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+                datalad configuration set datalad.gitlab-default-site 'my-site'
+                datalad configuration set datalad.gitlab-'my-site'-project 'my-top-level-group'
+            </code>
+        </pre>
+    </div>
+    <div class="fragment">
+        Run the command:
+        <pre style="margin-left: 0;">
+            <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+                datalad create-sibling-gitlab -d . --recursive -s 'my-sibling-name'
+            </code>
+        </pre>
+    </div>
+</section>
 </section>
 
 <section>
     <h2><code>Publishing to OSF</code></h2>
+    <p><a href="https://osf.io/">https://osf.io/</a></p>
     <img src="pics/git-annex-osf-logo.png" alt="datalad-osf-logo" width="50%">
 </section>
 
@@ -461,6 +495,7 @@
 
 <section>
     <h2><code>Publishing to Sciebo</code></h2>
+    <p><a href="https://hochschulcloud.nrw/en/">https://hochschulcloud.nrw/en/</a></p>
     <img src="pics/Sciebo_Logo.svg" alt="sciebo-logo">
 </section>
 
@@ -475,6 +510,7 @@
 
 <section>
     <h2><code>Publishing to Dataverse</code></h2>
+    <p><a href="https://dataverse.org/">https://dataverse.org/</a></p>
     <table>
         <tr>
             <td style="width: 50%;"><img src="pics/dataverse_r_project.png" alt=""></td>
