@@ -488,9 +488,9 @@ $ datalad siblings add --name origin --url git@git.jugit.fzj.de:adswa/experiment
         <pre style="margin-left: 0;">
             <code data-noescape data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
                 cat << EOF > ~/.python-gitlab.cfg
-                ['my-site']
+                [my-site]
                 url = https://gitlab.com/
-                private_token = 'my-gitlab-token'
+                private_token = my-gitlab-token
                 api_version = 4
                 EOF
             </code>
@@ -500,8 +500,8 @@ $ datalad siblings add --name origin --url git@git.jugit.fzj.de:adswa/experiment
         5. Configure <code>create-sibling-gitlab</code> in the <code>midterm_project</code> dataset:
         <pre style="margin-left: 0;">
             <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
-                datalad configuration set datalad.gitlab-default-site 'my-site'
-                datalad configuration set datalad.gitlab-'my-site'-project 'my-top-level-group'
+                datalad configuration set datalad.gitlab-default-site='my-site'
+                datalad configuration set datalad.gitlab-'my-site'-project='my-top-level-group'
             </code>
         </pre>
     </div>
