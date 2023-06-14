@@ -563,7 +563,7 @@ $ datalad siblings add --name origin --url git@git.jugit.fzj.de:adswa/experiment
         4. Create the sibling:
         <pre style="margin-left: 0;">
             <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
-                datalad create-sibling-osf -d . -s 'my-osf-sibling' \
+                datalad create-sibling-osf -d . -s my-osf-sibling \
                 --title 'my-osf-project-title' --mode export --public
             </code>
         </pre>
@@ -572,7 +572,7 @@ $ datalad siblings add --name origin --url git@git.jugit.fzj.de:adswa/experiment
         5. Push to the sibling:
         <pre style="margin-left: 0;">
             <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
-                datalad push -d . --to 'my-osf-sibling'
+                datalad push -d . --to my-osf-sibling
             </code>
         </pre>
     </div>
@@ -580,7 +580,8 @@ $ datalad siblings add --name origin --url git@git.jugit.fzj.de:adswa/experiment
         6. Clone from the sibling:
         <pre style="margin-left: 0;">
             <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
-                datalad clone osf://'my-osf-project-id'/
+                cd ..
+                datalad clone osf://my-osf-project-id my-osf-clone
             </code>
         </pre>
     </div>
@@ -602,15 +603,21 @@ $ datalad siblings add --name origin --url git@git.jugit.fzj.de:adswa/experiment
 
     <ol>
         <li class="fragment">Log into Sciebo</li>
-        <li class="fragment">Copy your WebDAV URL: Menu &gt; Files &gt; Settings &gt; WebDAV <br>
-            <small>E.g.: <code>https://fz-juelich.sciebo.de/remote.php/dav/files/s.heunis%40fz-juelich.de/</code></small>
+        <li class="fragment">Create a new folder, e.g., <code>datalad-fdm</code></li>
+        <li class="fragment">Copy your WebDAV URL and add the folder name at the end:
+            Menu &gt; Files &gt; Settings &gt; WebDAV <br>
+            <small>E.g.: <code>https://fz-juelich.sciebo.de/remote.php/dav/files/s.heunis%40fz-juelich.de/datalad-fdm</code></small>
         </li>
         <li class="fragment">Create the sibling:</li>
     </ol>
     <div class="fragment">
         <pre style="margin-left: 0;">
             <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
-                datalad create-sibling-webdav -d . -r -s 'my-webdav-sibling' \
+                cd midterm_project
+                datalad create-sibling-webdav \
+                -d . \
+                -r \
+                -s my-webdav-sibling \
                 --mode filetree 'my-webdav-url'
             </code>
         </pre>
@@ -620,7 +627,7 @@ $ datalad siblings add --name origin --url git@git.jugit.fzj.de:adswa/experiment
         4. Push to the sibling:
         <pre style="margin-left: 0;">
             <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
-                datalad push -d . --recursive --to 'my-webdav-sibling'
+                datalad push -d . --recursive --to my-webdav-sibling
             </code>
         </pre>
     </div>
@@ -628,8 +635,9 @@ $ datalad siblings add --name origin --url git@git.jugit.fzj.de:adswa/experiment
         5. Clone from the sibling:
         <pre style="margin-left: 0;">
             <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
-                datalad clone "datalad-annex::?type=webdav&encryption=none\
-                &exporttree=yes&url='my-webdav-url'/'dataset-name'"
+                cd ..
+                datalad clone 'datalad-annex::?type=webdav&encryption=none\
+                &exporttree=yes&url=my-webdav-url/dataset-name' my-webdav-clone
             </code>
         </pre>
     </div>
@@ -656,7 +664,7 @@ $ datalad siblings add --name origin --url git@git.jugit.fzj.de:adswa/experiment
     </div>
     <ol>
         <li class="fragment">Create an account and log into demo.dataverse.org (or your instance)</li>
-        <li class="fragment">Create and copy a new API token</li>
+        <li class="fragment">Find your API token (Username > API Token)</li>
         <li class="fragment">Create a new Dataverse dataset</li>
         <li class="fragment">Add required metadata and save dataset</li>
         <li class="fragment">Retieve dataset DOI and the Dataverse instance URL</li>
@@ -665,7 +673,8 @@ $ datalad siblings add --name origin --url git@git.jugit.fzj.de:adswa/experiment
     <div class="fragment">
         <pre style="margin-left: 0;">
             <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
-                datalad add-sibling-dataverse -d . -s 'my-dataverse-sibling' \
+                cd midterm_project
+                datalad add-sibling-dataverse -d . -s my-dataverse-sibling \
                 'my-dataverse-instance-url' doi:'my-dataset-doi'
             </code>
         </pre>
@@ -682,7 +691,7 @@ $ datalad siblings add --name origin --url git@git.jugit.fzj.de:adswa/experiment
         7. Push to the sibling:
         <pre style="margin-left: 0;">
             <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
-                datalad push -d . --to 'my-dataverse-sibling'
+                datalad push -d . --to my-dataverse-sibling
             </code>
         </pre>
     </div>
@@ -690,9 +699,10 @@ $ datalad siblings add --name origin --url git@git.jugit.fzj.de:adswa/experiment
         8. Clone from the sibling:
         <pre style="margin-left: 0;">
             <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+                cd ..
                 datalad clone 'datalad-annex::?type=external&externaltype=dataverse\
-                &encryption=none&exporttree=no&url='my-dataverse-instance-url'\
-                &doi='my-dataset-doi' midterm_project
+                &encryption=none&exporttree=no&url=my-dataverse-instance-url\
+                &doi='my-dataset-doi' my-sciebo-clone
             </code>
         </pre>
     </div>
