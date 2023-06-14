@@ -82,15 +82,19 @@
     <br>
     <ol>
         <li>Talk: Using DataLad to interface RDM infrastructures</li>
-        <li>Code-along demo: publishing your data</li>
+        <li>Code-along demo: Publishing datasets</li>
     </ol>
 </section>
 
+<section>
 <section>
     <h2><code>1</code></h2>
     <h2><code>Using DataLad to interface RDM infrastructures</code></h2>
 </section>
 
+</section>
+
+<section>
 <section>
     <h2><code>2</code></h2>
     <h2><code>Code-along demonstration</code></h2>
@@ -111,12 +115,91 @@
 </section>
 
 
+<section style="text-align: left;">
+    <h3>Using DataLad in the Terminal</h3>
+
+    Check the installed version:
+    <pre style="margin-left: 0;">
+        <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+            datalad --version
+        </code>
+        <p id="displayArea"></p>
+    </pre>
+
+    <div class="fragment">
+        For help on using DataLad from the command line:
+        <pre style="margin-left: 0;">
+            <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+                datalad --help
+            </code>
+        </pre>
+    </div>
+
+    <div class="fragment">
+        For extensive info about the installed package, its dependencies, and extensions, use <code>wtf</code>:
+        <pre style="margin-left: 0;">
+            <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+                datalad wtf
+            </code>
+        </pre>
+    </div>
+</section>
+
+
+<section style="text-align: left;">
+    <h3>git identity</h3>
+    Check git identity:
+    <pre style="margin-left: 0;">
+        <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+            git config --get user.name
+            git config --get user.email
+        </code>
+    </pre>
+
+    <div class="fragment">
+        Configure git identity:
+        <pre style="margin-left: 0;">
+            <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+                git config --global user.name "Stephan Heunis"
+                git config --global user.email "s.heunis@fz-juelich.de"
+            </code>
+        </pre>
+    </div>
+</section>
+
+
+<section style="text-align: left;">
+    <h3>Using datalad via its Python API</h3>
+    Open a Python environment:
+    <pre style="margin-left: 0;">
+        <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+            ipython
+        </code>
+    </pre>
+    <div class="fragment">
+        Import and start using:
+        <pre style="margin-left: 0;">
+            <code data-trim class="language-python" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+                import datalad.api as dl
+                dl.create(path='mydataset')
+            </code>
+        </pre>
+    </div>
+    <div class="fragment">
+        Exit the Python environment:
+        <pre style="margin-left: 0;">
+            <code data-trim class="language-python" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+                exit
+            </code>
+        </pre>
+    </div>
+</section>
+</section>
 
 <!-- PUBLISHING: THEORY -->
 
 
 <section>
-
   <section data-transition="None">
       <h2>Quick Basics</h2>
     <img src="pics/dataset.svg" width="600"> <br>
@@ -223,8 +306,10 @@
         </code>
         </pre>
 </section>
+</section>
 
 <section>
+    <section>
     <h2>Our plan</h2>
     <br>
     <ol>
@@ -605,86 +690,6 @@ $ datalad siblings add --name origin --url git@git.jugit.fzj.de:adswa/experiment
 
 <section>
     <h2><code>Datalad Basics</code></h2>
-</section>
-
-<section style="text-align: left;">
-    <h3>datalad</h3>
-
-    Check the installed version:
-    <pre style="margin-left: 0;">
-        <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
-            datalad --version
-        </code>
-        <p id="displayArea"></p>
-    </pre>
-
-    <div class="fragment">
-        For help on using DataLad from the command line:
-        <pre style="margin-left: 0;">
-            <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
-                datalad --help
-            </code>
-        </pre>
-    </div>
-
-    <div class="fragment">
-        For extensive info about the installed package, its dependencies, and extensions, use <code>wtf</code>:
-        <pre style="margin-left: 0;">
-            <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
-                datalad wtf
-            </code>
-        </pre>
-    </div>
-</section>
-
-
-<section style="text-align: left;">
-    <h3>git identity</h3>
-    Check git identity:
-    <pre style="margin-left: 0;">
-        <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
-            git config --get user.name
-            git config --get user.email
-        </code>
-    </pre>
-
-    <div class="fragment">
-        Configure git identity:
-        <pre style="margin-left: 0;">
-            <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
-                git config --global user.name "Stephan Heunis"
-                git config --global user.email "s.heunis@fz-juelich.de"
-            </code>
-        </pre>
-    </div>
-</section>
-
-
-<section style="text-align: left;">
-    <h3>Using datalad via its Python API</h3>
-    Open a Python environment:
-    <pre style="margin-left: 0;">
-        <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
-            ipython
-        </code>
-    </pre>
-    <div class="fragment">
-        Import and start using:
-        <pre style="margin-left: 0;">
-            <code data-trim class="language-python" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
-                import datalad.api as dl
-                dl.create(path='mydataset')
-            </code>
-        </pre>
-    </div>
-    <div class="fragment">
-        Exit the Python environment:
-        <pre style="margin-left: 0;">
-            <code data-trim class="language-python" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
-                exit
-            </code>
-        </pre>
-    </div>
 </section>
 
 <section>
