@@ -87,10 +87,12 @@
 </section>
 
 <section>
+    <h2><code>1</code></h2>
     <h2><code>Using DataLad to interface RDM infrastructures</code></h2>
 </section>
 
 <section>
+    <h2><code>2</code></h2>
     <h2><code>Code-along demonstration</code></h2>
 </section>
 
@@ -107,6 +109,11 @@
         <li class="fragment">Select a username and password when logging in for the first time; remember it!</li>
     </ul>
 </section>
+
+
+
+<!-- PUBLISHING: THEORY -->
+
 
 <section>
 
@@ -304,14 +311,22 @@
 </section>
 
 
+
+
+<!-- PUBLISHING: CODE ALONG -->
+
 <section>
+<section>
+    <h2><code>2a</code></h2>
     <h2><code>Publishing to GitLab</code></h2>
     <p><a href="https://gitlab.com/">https://gitlab.com/</a></p>
     <img src="pics/gitlab-logo-100.svg" alt="gitlab-logo">
 </section>
 
 <section style="text-align: left;">
-    <h2>create-sibling-gitlab</h2>
+    <div style="display: flex !important; align-items: center">
+        <h2>create-sibling-gitlab</h2>&nbsp;<a href="https://handbook.datalad.org/en/latest/basics/101-139-hostingservices.html#creating-a-sibling-on-gitlab">(docs)</a>
+    </div>
 
     <ol>
         <li class="fragment">Log into GitLab</li>
@@ -325,14 +340,14 @@
                 cat << EOF > ~/.python-gitlab.cfg
                 ['my-site']
                 url = https://gitlab.com/
-                private_token = 'my-token'
+                private_token = 'my-gitlab-token'
                 api_version = 4
                 EOF
             </code>
         </pre>
     </div>
     <div class="fragment">
-        Configure <code>create-sibling-gitlab</code> in the midterm_project dataset:
+        5. Configure <code>create-sibling-gitlab</code> in the <code>midterm_project</code> dataset:
         <pre style="margin-left: 0;">
             <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
                 datalad configuration set datalad.gitlab-default-site 'my-site'
@@ -341,46 +356,130 @@
         </pre>
     </div>
     <div class="fragment">
-        Run the command:
+        6. Create the sibling:
         <pre style="margin-left: 0;">
             <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
-                datalad create-sibling-gitlab -d . --recursive -s 'my-sibling-name'
+                datalad create-sibling-gitlab -d . --recursive -s 'my-gitlab-sibling'
+            </code>
+        </pre>
+    </div>
+    <div class="fragment">
+        7. Push to the sibling:
+        <pre style="margin-left: 0;">
+            <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+                datalad push -d . --recursive --to 'my-gitlab-sibling'
             </code>
         </pre>
     </div>
 </section>
 </section>
 
+
+
+<section>
 <section>
     <h2><code>Publishing to OSF</code></h2>
     <p><a href="https://osf.io/">https://osf.io/</a></p>
     <img src="pics/git-annex-osf-logo.png" alt="datalad-osf-logo" width="50%">
 </section>
 
-<section>
-    <h2>create-sibling-osf</h2>
-    <pre style="margin-left: 0;">
-        <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
-            create-sibling-osf
-        </code>
-    </pre>
+<section style="text-align: left;">
+    <div style="display: flex !important; align-items: center">
+        <h2>create-sibling-osf</h2>&nbsp;<a href="https://docs.datalad.org/projects/osf/en/latest/">(docs)</a>
+    </div>
+    
+    <ol>
+        <li class="fragment">Log into OSF</li>
+        <li class="fragment">Create personal access token</li>
+        <li class="fragment">Enter credentials using <code>datalad osf-credentials</code>:</li>
+    </ol>
+    <div class="fragment">
+        <pre style="margin-left: 0;">
+            <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+                datalad osf-credentials
+            </code>
+        </pre>
+    </div>
+    <div class="fragment">
+        4. Create the sibling:
+        <pre style="margin-left: 0;">
+            <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+                datalad create-sibling-osf -d . -s 'my-osf-sibling' \
+                --title 'my-osf-project-title' --mode export --public
+            </code>
+        </pre>
+    </div>
+    <div class="fragment">
+        5. Push to the sibling:
+        <pre style="margin-left: 0;">
+            <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+                datalad push -d . --recursive --to 'my-osf-sibling'
+            </code>
+        </pre>
+    </div>
+    <div class="fragment">
+        6. Clone from the sibling:
+        <pre style="margin-left: 0;">
+            <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+                datalad clone osf://'my-osf-project-id'/
+            </code>
+        </pre>
+    </div>
+</section>
 </section>
 
+
+<section>
 <section>
     <h2><code>Publishing to Sciebo</code></h2>
     <p><a href="https://hochschulcloud.nrw/en/">https://hochschulcloud.nrw/en/</a></p>
     <img src="pics/Sciebo_Logo.svg" alt="sciebo-logo">
 </section>
 
-<section>
-    <h2>create-sibling-webdav</h2>
-    <pre style="margin-left: 0;">
-        <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
-            create-sibling-webdav
-        </code>
-    </pre>
+<section style="text-align: left;">
+    <div style="display: flex !important; align-items: center">
+        <h2>create-sibling-webdav</h2>&nbsp;<a href="https://docs.datalad.org/projects/next/en/latest/generated/man/datalad-create-sibling-webdav.html">(docs)</a>
+    </div>
+
+    <ol>
+        <li class="fragment">Log into Sciebo</li>
+        <li class="fragment">Copy your WebDAV URL: Menu &gt; Files &gt; Settings &gt; WebDAV <br>
+            <small>E.g.: <code>https://fz-juelich.sciebo.de/remote.php/dav/files/s.heunis%40fz-juelich.de/</code></small>
+        </li>
+        <li class="fragment">Create the sibling:</li>
+    </ol>
+    <div class="fragment">
+        <pre style="margin-left: 0;">
+            <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+                datalad create-sibling-webdav -d . -r -s 'my-webdav-sibling' \
+                --mode filetree 'my-webdav-url'
+            </code>
+        </pre>
+        At this point, DataLad should ask for credentials if you have not entered them before. Enter your Sciebo username and password.
+    </div>
+    <div class="fragment">
+        4. Push to the sibling:
+        <pre style="margin-left: 0;">
+            <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+                datalad push -d . --recursive --to 'my-webdav-sibling'
+            </code>
+        </pre>
+    </div>
+    <div class="fragment">
+        5. Clone from the sibling:
+        <pre style="margin-left: 0;">
+            <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+                datalad clone "datalad-annex::?type=webdav&encryption=none\
+                &exporttree=yes&url='my-webdav-url'/'dataset-name'"
+            </code>
+        </pre>
+    </div>
+</section>
 </section>
 
+
+
+<section>
 <section>
     <h2><code>Publishing to Dataverse</code></h2>
     <p><a href="https://dataverse.org/">https://dataverse.org/</a></p>
@@ -392,14 +491,55 @@
     </table>
 </section>
 
-<section>
-    <h2>create-sibling-dataverse</h2>
-    <pre style="margin-left: 0;">
-        <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
-            create-sibling-dataverse
-        </code>
-    </pre>
+<section style="text-align: left;">
+    <div style="display: flex !important; align-items: center">
+        <h2>add-sibling-dataverse</h2>&nbsp;<a href="https://docs.datalad.org/projects/dataverse/en/latest/">(docs)</a>
+    </div>
+    <ol>
+        <li class="fragment">Create an account and log into demo.dataverse.org (or your instance)</li>
+        <li class="fragment">Create and copy a new API token</li>
+        <li class="fragment">Create a new Dataverse dataset</li>
+        <li class="fragment">Add required metadata and save dataset</li>
+        <li class="fragment">Retieve dataset DOI and the Dataverse instance URL</li>
+        <li class="fragment">Create the sibling:</li>
+    </ol>
+    <div class="fragment">
+        <pre style="margin-left: 0;">
+            <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+                datalad add-sibling-dataverse -d . -s 'my-dataverse-sibling' \
+                'my-dataverse-instance-url' doi:'my-dataset-doi'
+            </code>
+        </pre>
+        <em>for example:</em>
+        <pre style="margin-left: 0;">
+            <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+                datalad add-sibling-dataverse -d . -s dataverse \
+                https://demo.dataverse.org  doi:10.70122/FK2/3K9FOD
+            </code>
+        </pre>
+        <em>At this point, DataLad should ask for credentials if you have not entered them before. Enter the API token that you created earlier.</em>
+    </div>
+    <div class="fragment">
+        7. Push to the sibling:
+        <pre style="margin-left: 0;">
+            <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+                datalad push -d . --to 'my-dataverse-sibling'
+            </code>
+        </pre>
+    </div>
+    <div class="fragment">
+        8. Clone from the sibling:
+        <pre style="margin-left: 0;">
+            <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+                datalad clone 'datalad-annex::?type=external&externaltype=dataverse\
+                &encryption=none&exporttree=no&url='my-dataverse-instance-url'\
+                &doi='my-dataset-doi' midterm_project
+            </code>
+        </pre>
+    </div>
 </section>
+</section>
+
 
 
 
