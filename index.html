@@ -173,6 +173,57 @@
     </pre>
 </section>
 
+<section style="text-align: left;">
+    <h2>Our dataset: Midterm YODA Data Analysis Project</h2>
+        <ul>
+    <li>Let's explore the dataset briefly</li>
+        </ul>
+    <div class="fragment">
+    Install the dataset:
+        <pre style="margin-left: 0; margin-top: 2em;">
+        <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+            datalad clone \
+            https://github.com/datalad-handbook/midterm_project.git
+        </code>
+        </pre>
+    </div> <div class="fragment">
+    Find out about its subdatasets
+        <pre style="margin-left: 0; margin-top: 2em;">
+        <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+            cd midterm_project
+            datalad subdatasets
+        </code>
+        </pre>
+    </div> <div class="fragment">
+    Get some contents
+        <pre style="margin-left: 0; margin-top: 2em;">
+        <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+            datalad get input
+        </code>
+        </pre>
+    </div> <div class="fragment">
+    Drop some contents
+        <pre style="margin-left: 0; margin-top: 2em;">
+        <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+            datalad drop input
+        </code>
+        </pre>
+    </div> <div class="fragment">
+    Find out about its history
+    <pre style="margin-left: 0; margin-top: 2em;">
+        <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+            tig
+        </code>
+        </pre>
+    </div> <div class="fragment">
+    Reproduce an analysis
+    <pre style="margin-left: 0; margin-top: 2em;">
+        <code data-trim class="language-bash" onmousemove="showHover(event)" onmousedown="clickCopy(event)" onmouseleave="leaveElement(event)">
+            datalad rerun HEAD~2
+        </code>
+        </pre>
+</section>
+
 <section>
     <h2>Our plan</h2>
     <br>
