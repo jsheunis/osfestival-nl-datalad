@@ -21,7 +21,6 @@ vanilla
 wasabi
 clove
 dill
-kaffir
 licorice
 marjoram
 oregano

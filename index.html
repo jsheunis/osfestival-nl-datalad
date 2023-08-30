@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title> FDM.NRW Werkstatt </title>
-  <meta name="description" content=" incf-2022-lightning-jsheunis ">
+  <title> datalad @ OSF2023NL </title>
+  <meta name="description" content=" osfnl-2023-datalad ">
   <meta name="author" content=" Stephan Heunis ">
 
   <meta charset="utf-8">
@@ -23,16 +23,12 @@
 
 <!-- FRONT PAGE -->
 <section>
-    <h2 style="margin-bottom: 0;">FDM.NRW Werkstatt 2023</h2>
+    <h2 style="margin-bottom: 0;">Dutch Open Science Festival 2023</h2>
     <img src="pics/datalad_git.svg" style="height:300px; margin-bottom: 0;" alt="title image">
     <div style="margin-top:0.5em;">
         <table style="border: none;">
             <tr>
-                <td>Michael Hanke<br>Adina Wagner<br>Stephan Heunis
-                </td>
-                <td style="text-align: center;">
-                    <img style="height:100px;margin-right:1px;margin-bottom:20px;margin-top: 1.5em; vertical-align:middle;" data-src="pics/fzj_logo.svg" />
-                    <br>
+                <td>Stephan Heunis<br>
                     <small>
                         <a href="https://fosstodon.org/@datalad" target="_blank">
                         <img data-src="pics/mastodon.svg" style="height:30px;margin:0px" />
@@ -46,36 +42,677 @@
                         </a>
                     </small>
                 </td>
+                <td style="text-align: center;">
+                    <img style="height:100px;margin-right:1px;margin-bottom:20px;margin-top: 1.5em; vertical-align:middle;" data-src="pics/fzj_logo.svg" />
+                </td>
             </tr>
         </table>
     </div>
     <p style="text-align: center;">
-        <small><a href="http://psychoinformatics.de" target="_blank">Psychoinformatics lab</a>
+        <small><a href="http://psychoinformatics.de" target="_blank">Psychoinformatics lab</a>,
+            Institute of Neuroscience and Medicine, Brain &amp; Behavior (INM-7)<br>Research Center Jülich, Germany
             <br>
-            Institute of Neuroscience and Medicine, Brain &amp; Behavior (INM-7), Germany
+        </small>
+        <small>
+            <a href="https://erasmus-synclab.nl/" target="_blank">SYNC lab</a>,
+            Department of Psychology, Education and Child Studies
+            <br>Erasmus School of Social and Behavioral Sciences, EUR, The Netherlands
             <br>
         </small>
     </p>
-    <br>
     <div>
-        <small>Slides:&nbsp;</small><a href="https://psychoinformatics-de.github.io/fdm-datalad"><small>psychoinformatics-de.github.io/fdm-datalad</small></a>
-        <br><a href="https://files.inm7.de/adina/fdm-datalad/#/">files.inm7.de/adina/fdm-datalad</a>
+        <small>Slides:&nbsp;</small>
+        <br><a href="https://jsheunis.github.io/osfestival-nl-datalad">jsheunis.github.io/osfestival-nl-datalad</a>
     </div>
+</section>
+
+<section>
+    <h2>Agenda</h2>
+    <br>
+    <p style="margin-left: 3em; text-align: left;">
+        14h00:&nbsp;&nbsp;&nbsp;An overview of DataLad (<em>30 min</em>) <br>
+        14h30:&nbsp;&nbsp;&nbsp;Code-along demo: DataLad basics (<em>15 min</em>) <br>
+        <em>14h45:&nbsp;&nbsp;&nbsp;break (<em>10 min</em>)</em> <br>
+        14h55:&nbsp;&nbsp;&nbsp;Code-along demo: DataLad basics (<em>10 min</em>) <br>
+        15h10:&nbsp;&nbsp;&nbsp;Code-along demo: publishing datasets (<em>30 min</em>)<br>
+    </p>
+</section>
+
+<section>
+    <h2>Acknowledgements</h2>
+    <table>
+    <tr style="vertical-align:middle">
+      <td style="vertical-align:middle">
+        <dl style="margin-bottom:20px">
+          <dt style="margin-top:20px">DataLad software <br>
+              &amp; ecosystem</dt>
+          <dd style="margin-left:5px!important">
+            <ul style="margin-left:5px!important">
+                <li>Psychoinformatics Lab, <br>
+                Research center Jülich</li>
+                <li>Center for Open <br>
+                Neuroscience, <br>
+                Dartmouth College</li>
+                <li>Joey Hess (git-annex)</li>
+                <li><em>>100 additional contributors</em></li>
+            </ul>
+          </dd>
+        </dl>
+      </td>
+      <td style="vertical-align:middle">
+    <div style="margin-top:-20px;margin-bottom:-20px;text-align:center"><strong>Funders</strong></div>
+    <div style="margin-top:-20px">
+    <img style="height:150px;margin-right:0px" data-src="pics/nsf.png" />
+    <img style="height:150px;margin-right:0px;margin-left:40px" data-src="pics/binc.png" />
+    <img style="height:150px;margin-left:0px" data-src="pics/bmbf_datalad.png" />
+    </div>
+    <div style="margin-top:-20px">
+    <img style="height:80px;margin-top:0px;margin-left:30px" data-src="pics/fzj_logo.svg" />
+    <img style="height:60px;margin-left:50px;margin-bottom:25px" data-src="pics/dfg_logo.png" />
+    </div>
+    <div style="margin-top:-20px">
+    <img style="height:100px" data-src="pics/erc_logo.png" />
+    <img style="height:60px;margin-bottom:35px" data-src="pics/erdf.png" />
+    </div>
+    <div style="margin-top:-20px">
+    <img style="height:80px;margin-right:20px;margin-bottom:5px" data-src="pics/nrw_mkw_logo.png" />
+    <img style="height:60px;margin-right:20px" data-src="pics/cbbs_logo.png" />
+    <img style="height:60px" data-src="pics/LSA-Logo.png" />
+    </div>
+    </td>
+    </tr>
+    <tr>
+    <td colspan=2 width="100%">
+    <div style="margin-top:0px">
+    <div style="margin-top:20px;margin-bottom:-50px"><strong>Collaborators</strong></div>
+    <img style="height:100px;margin:0px;margin-left:100px" data-src="pics/cbrain_logo.png" />
+    <img style="height:100px;margin:20px" data-src="pics/hbp_logo.png" />
+    <img style="height:100px;margin:20px" data-src="pics/conp_logo.png" />
+    <img style="height:120px;margin:10px" data-src="pics/openneuro_logo.png" />
+    <img style="height:100px;margin:20px" data-src="pics/ebrain-health-logo.png"/>
+    <img style="height:100px;margin:20px" data-src="pics/GIN_logo.png" />
+    </div>
+    <div style="margin-top:-20px;text-align:center">
+    <img style="height:120px;margin:20px" data-src="pics/sfb1451_logo.png" />
+    <img style="height:140px;margin:10px" data-src="pics/brainlife_logo.png" />
+    <img style="height:100px;margin:20px" data-src="pics/vbc_logo.png" />
+    </div>
+    </td>
+    </tr>
+    </table>
 </section>
 
 
 <section>
-    <h2>Acknowledgements</h2>
+    <h2>What is a DataLad?</h2>
 
-    <div style="margin-top:0.5em;">
-        <table style="border: none;">
-            <tr>
-                <td><img style="height:500px;margin-right:1px;margin-bottom:10px;vertical-align:middle;" data-src="pics/funders.svg" /></td>
-                <td><img style="height:500px;margin-right:1px;margin-bottom:10px;vertical-align:middle;border:1px solid black" data-src="pics/psyinf_team.png" /></td>
-            </tr>
-        </table>
-    </div>
+    <br>
+    <ul>
+        <li class="fragment">A free and open source tool</li>
+        <li class="fragment">for decentralized (research) data management</li>
+        <li class="fragment">with a command line interface, Python API, and graphical user interface</li>
+        <li class="fragment">allowing exhaustive tracking of the evolution of digital objects</li>
+        <li class="fragment">and computational provenance tracking</li>
+        <li class="fragment">to enhance modularity, portability and reproducibility.</li>
+    </ul>
+    <br><br>
+    <div class="fragment">Let's explore this...</div>
+    
 </section>
+
+
+<section>
+    <section>
+      <h2>The starting point: <br> Everything is to be made FAIR</h2>
+      <ul style="list-style-type:none">
+        <li><h1 style="display:inline">F</h1>indable</li>
+        <li><h1 style="display:inline">A</h1>ccessible</li>
+        <li><h1 style="display:inline">I</h1>nteroperable</li>
+        <li><h1 style="display:inline">R</h1>eusable</li>
+      </ul>
+      <br>
+      <note><small><a href="https://www.go-fair.org/fair-principles">https://www.go-fair.org/fair-principles</a></small></note>
+      <aside class="notes">
+          since 2016 (five years), no way around it, declared "done"
+      </aside>
+    </section>
+    
+    <section>
+      <h2>But the "I" in FAIR is not you</h2>
+      <ul style="list-style-type:none">
+        <li><h1 style="display:inline">F?</h1> I already have it, it's right here!</li>
+        <li><h1 style="display:inline">A?</h1> I am working with it already, I made it!</li>
+        <li><h1 style="display:inline">I?</h1> With what?</li>
+        <li><h1 style="display:inline">R?</h1> First let me finish this PhD and then we talk, OK?</li>
+      </ul>
+      <aside class="notes">
+          individual/limited perspective less clear, tendency to delay and make expensive
+      </aside>
+    
+      <p style="margin-top:50px"><strong>Still, someone has to put in the work or nothing will ever be FAIR.</strong></p>
+    </section>
+    
+    <section data-markdown data-transition="none"><script type="text/template">
+    ## VAMP it up!
+    ![](pics/Vamp-The_Rich_Dont_Rock.jpg)<!-- .element: height="800px" -->
+
+    <small><imgcredit>Divebomb Records</imgcredit></small>
+    
+    Note:
+    My proposal: Let's think about VAMP instead
+    </script></section>
+    
+    <section>
+        <h2>Be FAIR and immediately benefit from it <em>yourself</em></h2>
+      <ul style="list-style-type:none">
+        <li><h1 style="display:inline">V</h1>ersion-controlled</li>
+        <li><h1 style="display:inline">A</h1>ctionable metadata</li>
+        <li><h1 style="display:inline">M</h1>odular</li>
+        <li><h1 style="display:inline">P</h1>ortable</li>
+      </ul>
+      <aside class="notes">
+          not the band, but...
+      </aside>
+    </section>
+    
+    <section data-markdown><script type="text/template">
+    ![](pics/datalad_logo_wide.svg)<!-- .element: height="600" -->
+    http://datalad.org<!-- .element: style="margin-left:800px" -->
+    <br><br><br>
+    ### So what does the DataLad approach involve?
+    </script></section>
+</section>
+    
+    
+<section>
+    <section data-markdown data-transition="none"><script type="text/template">
+    #### The DataLad approach...
+    ## Exhaustive tracking of research components
+    ![](pics/vamp_0_start.png)<!-- .element: width="100%" -->
+    Well-structured datasets (using community standards), and portable computational environments &mdash; and their evolution &mdash; are the precondition for reproducibility
+    
+    <table width=100% style="padding:0px">
+    <tr><td style="padding:0px">
+    <code><pre>
+    # turn any directory into a dataset`
+    # with version control
+    
+    % datalad create &lt;directory&gt;
+    </pre></code>
+    </td><td style="padding:0px">
+    <code><pre>
+    # save a new state of a dataset with
+    # file content of any size
+    
+    % datalad save
+    </pre></code>
+    </td></tr></table>
+    Note:
+    - link to prev. statements on description standards
+    - your community could be really small (your lab), when data are precious resources
+    will be spent to understand it, but information must be capture to make this possible
+    </script></section>
+    
+    <section data-markdown><script type="text/template">
+    ## What is a DataLad dataset?
+
+    - a regular, but *managed* directory on computer file system
+      <small>think: provides the familiar look and feel of files and folders</small>
+    
+    - **metadata** on the evolution of a collection of files:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;> content identity <em>(think: checksums)</em><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;> content availability <em>(think: URLs)</em><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;> provenance of change <em>(think: who did what when?)</em>
+    
+    - a **Git** repository <br>
+      <small>think: compatible with anything that can handle Git repositories</small>
+    
+    - employs **git-annex** for file content tracking and transport
+      <small>think: supports any storage service and transport protocol supported by git-annex</small>
+    
+    - extends both Git and git-annex with additional features and infrastructure support <br>
+      <small>think: deposit and retrieve from non-Git-aware sites</small>
+    </script></section>
+    
+    <section data-markdown><script type="text/template">
+    ## Talk is cheap, show me the code: Git vs. DataLad
+    
+    <iframe width="1120" height="630" src="https://www.youtube-nocookie.com/embed/Yrg6DgOcbPE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+    https://www.youtube.com/watch?v=Yrg6DgOcbPE
+    
+    <aside class="notes">
+    - show git limits: commit a change in a 3rd-level submodule
+    - show annex limits: get file in a subdataset
+    - reveal: datalad makes repo-boundaries vanish -- show save -r
+    </aside>
+    </script></section>
+</section>
+    
+    
+<section>
+    <section data-markdown data-transition="none"><script type="text/template">
+    #### The DataLad approach...
+    ## Capture computational provenance
+    ![](pics/vamp_1_provcapture.png)<!-- .element: width="100%" -->
+    Which data was needed at which version, as input into which code, running with what parameterization in which
+    computional environment, to generate an outcome?
+    
+    <table width=100% style="padding:0px">
+    <tr><td style="padding:0px">
+    <code><pre>
+    # execute any command and capture its output
+    # while recording all input versions too
+    
+    % datalad run --input ... --output ... &lt;command&gt;
+    </pre></code>
+    </td></tr></table>
+    
+    Note:
+    The missing link: even when everything is shared, we still don't know how to start.
+    README is minimum, but executable prov-records are much better.
+    </script></section>
+    
+    <section data-markdown><script type="text/template">
+    ## Data descriptor &larr; actionable provenance
+    ![](pics/w3cprov.png)<!-- .element: width="80%" -->
+    
+    <note>https://www.w3.org/TR/prov-overview</note>
+    Note:
+    - description standard often miss out on provenance
+    - Mostly about "what is it?"
+    - We also need "how it came to be?" (faiR actually demands it)
+    - shown: W3C-PROV, but we are not there yet
+    
+    take a step back, look at what provenance requires and provides
+    </script></section>
+    
+    <section data-markdown><script type="text/template">
+    ![](pics/fairlybig_paper.png)<!-- .element: width="100%" -->
+    https://www.nature.com/articles/s41597-022-01163-2
+    </script></section>
+</section>
+    
+    
+<section>
+    <section data-markdown data-transition="none"><script type="text/template">
+    #### The DataLad approach...
+    ## Exhaustive capture enables portability
+    ![](pics/vamp_2_pushtocloud.png)<!-- .element: width="100%" -->
+    Precise identification of data and computational environments, combined with provenance records form a comprehensive and portable data structure, capturing all aspects of an investigation.
+    
+    <table width=100% style="padding:0px">
+    <tr><td style="padding:0px">
+    <code><pre>
+    # transfer data and metadata to other sites and services
+    # with fine-grained access control for dataset components
+    
+    % datalad push --to &lt;site-or-service&gt;
+    </pre></code>
+    </td></tr></table>
+    
+    Note:
+    Does it fly? Can you give it to someone? Or can you take it with you to your new lab?
+    </script></section>
+    
+    <section data-markdown data-transition="fade"><script type="text/template">
+    ## (Meta)data deposition (on Dataverses)
+    ![](pics/dataverse_demo_deposit.png)<!-- .element: width="70%" style="margin-top:-30px;margin-bottom:-20px;z-index: -1"-->
+    
+    - Register any dataset at any Dataverse site (e.g., DataverseNL), receive citable DOI
+    - No requirement to re-host data (avoids duplication of storage cost)
+    - Data owner remains in full control over data access
+    - https://github.com/datalad/datalad-dataverse
+    </script></section>
+    
+    
+    <section data-transition="fade">
+    <h2>EUDAT B2DROP: data deposition and retrieval</h2>
+    <video controls data-autoplay src="pics/webdav_roundtrip.mp4"></video>
+    Similar support for Surfdrive, Dataverse, Open Science Framework, S3, ...
+    </section>
+</section>
+    
+    
+<section>
+    <section data-markdown data-transition="none"><script type="text/template">
+    #### The DataLad approach...
+    ## Reproducibility strengthens trust
+    ![](pics/vamp_3_reproduce.png)<!-- .element: width="100%" -->
+    Outcomes of computational transformations can be validated by authorized 3rd-parties. This enables audits, promotes accountability, and streamlines automated "upgrades" of outputs
+    
+    <table width=100% style="padding:0px">
+    <tr><td style="padding:0px">
+    <code><pre>
+    # obtain dataset (initially only identity,
+    # availability, and provenance metadata)
+    
+    % datalad clone &lt;url&gt;
+    </pre></code>
+    </td><td style="padding:0px">
+    <code><pre>
+    # immediately actionable provenance records
+    # full abstraction of input data retrieval
+    
+    % datalad rerun &lt;commit|tag|range&gt;
+    </pre></code>
+    </td></tr></table>
+    Note:
+    Goal is automated reproducibility, enables assessment of robustness and benchmarking algorithmic developments
+    </script></section>
+    
+    <section data-markdown><script type="text/template">
+    ## When everything is tracked: A reproducible paper
+    
+    <iframe width="1120" height="630" src="https://www.youtube-nocookie.com/embed/nhLqmF58SLQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+    - Peer-reviewed paper published in Behavior Research Methods [[DOI 10.3758/s13428-020-01428-x](https://doi.org/10.3758/s13428-020-01428-x)]<!-- .element: style="font-size:70%" -->
+    
+    - Free to reproduce at https://github.com/psychoinformatics-de/paper-remodnav more details in the DataLad handbook
+      http://handbook.datalad.org/r.html?reproducible-paper.
+    
+    - Full video: https://youtube.com/datalad
+    
+    <!-- .element: style="font-size:70%" -->
+    Note:
+    - VERY useful prior publication
+    </script></section>
+</section>
+    
+    
+<section>
+    <section data-markdown data-transition="none"><script type="text/template">
+    #### The DataLad approach...
+    ## Ultimate goal: (re-)usability
+    ![](pics/vamp_4_reuse.png)<!-- .element: width="100%" -->
+    Verifiable, portable, self-contained data structures that track all aspects of an investigation exhaustively can be (re-)used as modular components in larger contexts &mdash; propagating their traits
+    
+    <table width=100% style="padding:0px">
+    <tr><td style="padding:0px">
+    <code><pre>
+    # declare a dependency on another dataset and
+    # re-use it a particular state in a new context
+    
+    % datalad clone -d &lt;superdataset&gt; &lt;url&gt; &lt;path-in-dataset&gt;
+    </pre></code>
+    </td></tr></table>
+    
+    Note:
+    With these in place, re-usability is a small(er) step
+    </script></section>
+    
+    <section data-markdown><script type="text/template">
+    ## DataLad: Manage (co-)evolution of digital objects
+    ![](pics/yoda_decentralized_publishing.png)<!-- .element: width="900" style="margin-bottom:-70px;margin-top:-20px" -->
+    
+    Consume, create, curate, analyze, publish, and query data with full provenance capture and "universal" metadata support.
+    <p style="font-size:70%;margin-top:-20px">
+    DataLad is free and open source (MIT-licensed). http://datalad.org
+    </p>
+    
+    <small><note>
+    Halchenko, Meyer, Poldrack, ... & Hanke, M. (2021).
+    DataLad: distributed system for joint management of code, data, and their relationship.
+    Journal of Open Source Software, 6(63), 3262.
+    </note></small>
+    Note:
+    - following illustrations contain concrete implementation with datalad
+    - Software developed to address the needs of long-term maintenance and collab on the stufyforrest dataset
+    </script></section>
+</section>
+    
+    <section>
+    <section data-markdown data-transition="none"><script type="text/template">
+    ## Why is DataLad a terminal app?
+    ![](videos/typing_monkey.gif)<!-- .element: width="49%" style="margin-bottom:170px" -->
+    ![](videos/mouse_pointers.webp)<!-- .element: width="49%" -->
+    
+    No reproducibility without precise instructions
+    </script></section>
+    
+    
+    <section
+        data-background-video="videos/gooey_historytab.mp4"
+        data-background-video-loop
+        data-background-size="contain">
+    <p style="padding-top:800px;text-shadow: 2px 2px 2px white;">
+    DataLad Gooey: Convenience for exploration and management
+    </p>
+    </section>
+    
+    <section
+        data-background-video="videos/gooey_run_in_terminal.mp4"
+        data-background-video-loop
+        data-background-size="contain">
+    <p style="padding-top:800px;text-shadow: 2px 2px 2px white;">
+    Companion (not competition) for the terminal
+    </p>
+    </section>
+    
+    <section
+        data-background-video="videos/gooey_add_metadata.mp4"
+        data-background-video-loop
+        data-background-size="contain">
+    <p style="padding-top:800px;text-shadow: 2px 2px 2px white;">
+    Metadata entry convenience
+    </p>
+    </section>
+    </section>
+    
+    <section>
+    <section data-markdown><script type="text/template">
+    ## Not feature-complete for you? Extend!
+    
+    https://github.com/datalad/datalad-extension-template
+    
+    <small>
+    
+    | `datalad-` | |
+    | --- | --- |
+    | `catalog` | Render a web-accessible catalog from DataLad dataset metadata |
+    | `container` | working with containerized environments |
+    | `crawler` | crawl web resources into an automated data distribution |
+    | `dataverse` | deposit at and retrieve datasets from Dataverse sites |
+    | `debian` | track Debian software package build and deployment reproducibly |
+    | `ebrains` | retrieve any EBRAINs hosted dataset as a DataLad dataset |
+    | `fuse` | mount DataLad datasets as a FUSE file system |
+    | `gooey` | extensible DataLad GUI |
+    | `metalad` | (semantic) metadata transport and reporting |
+    | `neuroimaging` | workflow and data format support for neuro/medical imaging |
+    | `next` | staging areas for new features |
+    | `osf` | deposit at and retrieve datasets from the Open Science Framework (OSF) |
+    | `ukbiobank` | Version-controlled access to the UKB dataset |
+    | `xnat` | retrieve MRI data from XNAT databases as DataLad datasets |
+    | ... | various 3rd-party extensions are also available (e.g., `getexec`, `lgpdextension`) |
+    
+    </small>
+    </script></section>
+    </small>
+    
+    <section data-markdown><script type="text/template">
+    ## DataLad catalog extension
+    ![](pics/datalad_catalog.png)<!-- .element: width="100%" style="margin-top:-20px" -->
+    
+    zero-cost reporting, presentation, collaboration
+    </script></section>
+    </section>
+    
+    
+    <section>
+    <section data-markdown><script type="text/template">
+    ## Data-centered, interoperable digital ecosystem
+    
+    ![](pics/decentralized_rdm.png)<!-- .element: width="100%" -->
+    
+    <note>Hanke, Pestilli, Wagner, Markiewicz, Poline & Halchenko (2021). In defense of decentralized research data
+    management. Neuroforum, 72, 17-25.</note>
+    
+    Note:
+    - Freedom of infrastructure selection
+    - Transitions between institutions and stewards
+    - Facilitate diverse collaboration
+    </script></section>
+    
+    
+    <section data-markdown><script type="text/template">
+    ## Becoming FAIR ... eventually
+    
+    - Bench/bed/field-side researchers are an essential source of<br> *valid* metadata,
+      critical for FAIR data
+    
+    - Their **resources are limited**, and they need something in exchange
+    
+    - Focus on **enabling practical collaboration**<br> (even if just with one's future self)
+    
+    - Make the aspirational goal **"FAIR data" a by-product of enabling efficient research**
+    
+    <note>Wilkinson et al. The FAIR Guiding Principles for scientific data management
+    and stewardship. Sci Data 3, 160018 (2016). https://doi.org/10.1038/sdata.2016.18</note>
+    </script></section>
+    
+    
+    <section data-markdown><script type="text/template">
+    ## Open science education
+    ![](pics/adina.jpg)<!-- .element: class="ackimg" -->
+    ![](pics/handbook_frontpage.png)<!-- .element: width="900" style="margin-top:-20px;margin-bottom:-10px" -->
+    
+    http://handbook.datalad.org
+    
+    - **educational materials** on technologies &mdash; **targeting users**, not developers (executable paper, student surpervisor workflow,
+      ...)
+    - handbook with 600+ pages on concepts, workflows, and use cases (led by Adina Wagner)
+    
+    Note:
+    RDM Education is key. Handbook helps people be more productive, yielding more FAIR resources as an outcome, but not as the main goal.
+    </script></section>
+    
+    
+    
+    <section>
+      <h2>DataLad contact and more information</h2>
+      <table>
+      <tr><td>Website + Demos</td>
+      <td><a href="http://datalad.org">http://datalad.org</a></td>
+      </tr><tr><td>Documentation</td>
+      <td><a href="http://handbook.datalad.org">http://handbook.datalad.org</a></td>
+      </tr><tr><td>Talks and tutorials</td>
+      <td><a href="https://youtube.com/datalad">https://youtube.com/datalad</a></td>
+      </tr><tr><td>Development</td>
+      <td><a href="http://github.com/datalad">http://github.com/datalad</a></td>
+      </tr><tr><td>Support</td>
+      <td><a href="https://matrix.to/#/#datalad:matrix.org">https://matrix.to/#/#datalad:matrix.org</a></td>
+      </tr><tr><td>Open data</td>
+      <td><a href="http://datasets.datalad.org">http://datasets.datalad.org</a></td>
+      </tr>
+      </tr><tr><td>Mastodon</td>
+      <td>@datalad@fosstodon.org</td>
+      </tr><tr><td>Twitter</td>
+      <td>@datalad</td>
+      </table>
+    </section>
+    </section>
+    
+    
+    <section>
+    <section data-markdown><script type="text/template">
+    ## FAIRly big: Process the UK Biobank (imaging data)
+    ![](pics/biobank_website.png)<!-- .element: height="400" -->
+    
+    - 76 TB in 43 million files in total
+    - 42,715 participants contributed personal health data
+    - Strict DUA
+    - Custom binary-only downloader
+    - Most data records offered as (unversioned) ZIP files
+    </script></section>
+    
+    <section data-markdown><script type="text/template">
+    ## Challenges
+    
+    - Process data such that
+      - Results are computationally reproducible (without the original compute infrastructure)
+      - There is complete linkage from results to an individual data record dowload
+      - It scales with the amount of available compute resources
+    
+    - Data processing pipeline
+      - Compiled MATLAB blob
+      - 1h processing time per image, with 41k images to process
+      - 1.2 M output files (30 output files per input file)
+      - 1.2 TB total size of outputs
+    </script></section>
+    
+    
+    <section data-markdown><script type="text/template">
+    ## FAIRly big results
+    
+    <iframe width="1120" height="630" src="https://www.youtube-nocookie.com/embed/UsW6xN2f2jc?start=17" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+    - Rendered from provenance records, automatically captured in the output dataset. Full video: https://youtube.com/datalad
+    - Two full (re-)computations, programmatically comparable, verifiable, reproducible -- on any system with data access
+    </script></section>
+    
+    <section data-markdown><script type="text/template">
+    ## FAIRly big setup
+    ![](pics/fairlybig_ukbsetup.png)<!-- .element: width="1200" style="margin-top:-35px;margin-bottom:-30px" -->
+    
+    - UKB DataLad extension can track the evolution of the complete data release in DataLad datasets
+    <!-- .element: style="font-size:80%" -->
+    - Full version history
+    <!-- .element: style="font-size:80%" -->
+    - Native and BIDSified data layout
+    <!-- .element: style="font-size:80%" -->
+    
+    <note>Wagner, Waite, Wierzba, Hoffstaedter, Waite, Poldrack, Eickhoff, Hanke (2021). FAIRly big: A framework for computationally reproducible processing of large-scale data.</note>
+    </script></section>
+    
+    <section data-markdown><script type="text/template">
+    ## FAIRly big workflow
+    ![](pics/fairlybig_workflow.png)<!-- .element: width="1200" style="margin-top:-35px;margin-bottom:-30px" -->
+    - Common data representation in secure environments
+    - Content-agnostic persistent (encrypted) storage
+    - All computations in freshly bootstrapped emphemeral environments, only using information from a fully self-contained  DataLad dataset
+    <note>Wagner et al. (2021). FAIRly big: A framework for computationally reproducible processing of large-scale data.</note>
+    </script></section>
+    
+    <section data-markdown><script type="text/template">
+    ## FAIRly big provenance capture
+    ![](pics/fairlybig_prov.png)<!-- .element: width="1200" style="margin-top:-35px;margin-bottom:-30px" -->
+    
+    - Every single pipeline execution is tracked
+    - Each execution individually reproducible without HPC access
+    <note>Wagner et al. (2021). FAIRly big: A framework for computationally reproducible processing of large-scale data.</note>
+    </script></section>
+    
+    <section data-markdown><script type="text/template">
+    ## FAIRly big workflow
+    ![](pics/fairlybig_workflow.png)<!-- .element: width="1200" style="margin-top:-35px;margin-bottom:-30px" -->
+    - Common data representation in secure environments
+    - Content-agnostic persistent (encrypted) storage
+    - All computations in freshly bootstrapped emphemeral environments, only using information from a fully self-contained  DataLad dataset
+    <note>Wagner et al. (2021). FAIRly big: A framework for computationally reproducible processing of large-scale data.</note>
+    </script></section>
+    
+    <section data-markdown data-transition="none"><script type="text/template">
+    ## Ready for repeated re-use
+    ![](pics/vamp_4_reuse.png)<!-- .element: width="100%" -->
+    Outcome: Actionable metadata record (in the form of a Git repository).
+    Orthogonalizes information on content identify and availability from actual data access
+    </script></section>
+    </section>
+    
+    
+    <section>
+    <section data-markdown><script type="text/template">
+    ## GDPR-anonymous data structure
+    ![](pics/gdpr_anon_dataset.svg)
+    </script></section>
+    
+    <section data-markdown><script type="text/template">
+    ## Remote analysis of clinical data
+    ![](pics/datalad_hospital.png)
+    </script></section>
+    </section>
+
+
 
 
 <section>
@@ -326,9 +963,9 @@
         <li><strong>Learn</strong> - How do we publish data?</li>
         <li><strong>Do</strong> - Publish data to:</li>
         <ul>
-            <li>GitLab</li>
+            <li>GitHub</li>
             <li>OSF</li>
-            <li>Sciebo (webdav)</li>
+            <li>SURF- drive (webdav)</li>
             <li>Dataverse</li>
         </ul>
     </ol>
@@ -592,9 +1229,9 @@ $ datalad siblings add --name origin --url git@git.jugit.fzj.de:adswa/experiment
 
 <section>
 <section>
-    <h2><code>Publishing to Sciebo</code></h2>
-    <p><a href="https://hochschulcloud.nrw/en/">https://hochschulcloud.nrw/en/</a></p>
-    <img src="pics/Sciebo_Logo.svg" alt="sciebo-logo">
+    <h2><code>Publishing to SURFdrive</code></h2>
+    <p><a href="https://www.surf.nl/en/surfdrive-store-and-share-your-files-securely-in-the-cloud">https://www.surf.nl/en/surfdrive-store-and-share-your-files-securely-in-the-cloud</a></p>
+    <img src="pics/surfdrive_logo.png" alt="surfdrive-logo">
 </section>
 
 <section style="text-align: left;">
@@ -603,11 +1240,12 @@ $ datalad siblings add --name origin --url git@git.jugit.fzj.de:adswa/experiment
     </div>
 
     <ol>
-        <li class="fragment">Log into Sciebo</li>
-        <li class="fragment">Create a new folder, e.g., <code>datalad-fdm</code></li>
+        <li class="fragment">Log into SURFdrive</li>
+
+        <li class="fragment">Create a new folder, e.g., <code>datalad-test</code></li>
         <li class="fragment">Copy your WebDAV URL and add the folder name at the end:
             Menu &gt; Files &gt; Settings &gt; WebDAV <br>
-            <small>E.g.: <code>https://fz-juelich.sciebo.de/remote.php/dav/files/s.heunis%40fz-juelich.de/datalad-fdm</code></small>
+            <small>E.g.: <code>https://surfdrive.surf.nl/files/remote.php/nonshib-webdav/datalad-test</code></small>
         </li>
         <li class="fragment">Create the sibling:</li>
     </ol>
